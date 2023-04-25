@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom'
 
 class AddContact extends React.Component{
     state = {
@@ -13,10 +13,10 @@ class AddContact extends React.Component{
             alert("All the fields are mandatory!");
             return
         }
-        
+        // const navigate = useNavigate();
         this.props.addContactHandler(this.state)
         this.setState({name:"", email:""})
-        // this.props.history.push("/")
+        // navigate("/")
     }
     render(){
         return (

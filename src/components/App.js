@@ -28,13 +28,14 @@ function App() {
   const addContactHandler = (contact) => {
     console.log(contact)
     setContacts([...contacts,{id: uuidv4(), ...contact}])
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([...contacts,contact]))
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([...contacts,{id: uuidv4(), ...contact}]))
   }
 
   const removeContactHandler = (id) => {
     const newContactList = contacts.filter((contact) => {
       return contact.id != id;
     })
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newContactList))
     setContacts(newContactList)
   }
 
