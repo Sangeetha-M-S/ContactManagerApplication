@@ -39,7 +39,7 @@ const EditContact = (props) => {
             return
         }
         
-        const updateValue = {name:sname, email:semail,id}      
+        const updateValue = {id:id, name:sname, email:semail}      
         props.updateContactHandler(updateValue);
         setSname("")
         setSemail("")

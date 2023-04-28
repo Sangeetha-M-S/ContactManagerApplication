@@ -51,9 +51,9 @@ function App() {
 
   const updateContactHandler = async (contact) => {
     console.log(contact);
-    const response = await api.put(`/contacts/${contact.id}`,contact, {
-      headers: { 'Content-Type': 'text/json'}
-    });
+    const response = await api.put(`/contacts/${contact.id}`,contact)
+      //headers: { 'Content-Type': 'text/json'}
+    //});
     console.log(response.data);
     const {id, name, email} = response.data;
     setContacts(contacts.map(contact => {
