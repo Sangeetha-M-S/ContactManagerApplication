@@ -34,7 +34,7 @@ function App() {
   const retrieveContacts = async () => {
     const response = await api.get("/contacts");
     return response.data;
-  }
+  }       
 
   const addContactHandler = async (contact) => {
     console.log(contact)
